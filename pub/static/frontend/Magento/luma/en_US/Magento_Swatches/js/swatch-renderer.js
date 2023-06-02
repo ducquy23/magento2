@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-swatches/view/base/web/js/swatch-renderer.js

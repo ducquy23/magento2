@@ -1,0 +1,4 @@
+PHP Fatal error:  Cannot declare class Ecommage\Blogext3\Cron\Example, because the name is already in use in /home/cloudpanel/htdocs/ducquy23.mgt/app/code/Ecommage/Blogext3/Cron/CustomCron.php on line 6
+PHP Fatal error:  Cannot declare class Ecommage\Blogext3\Cron\Example, because the name is already in use in /home/cloudpanel/htdocs/ducquy23.mgt/app/code/Ecommage/Blogext3/Cron/CustomCron.php on line 6
+PHP Fatal error:  Cannot declare class Ecommage\Blogext3\Cron\Example, because the name is already in use in /home/cloudpanel/htdocs/ducquy23.mgt/app/code/Ecommage/Blogext3/Cron/CustomCron.php on line 6
+PHP Fatal error:  Cannot declare class Ecommage\Blogext3\Cron\Example, because the name is already in use in /home/cloudpanel/htdocs/ducquy23.mgt/app/code/Ecommage/Blogext3/Cron/CustomCron.php on line 6

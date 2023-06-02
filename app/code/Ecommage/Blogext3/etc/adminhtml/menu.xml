@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Ecommage_Blogext3::listing" sortOrder="10" title="blog_menu" module="Ecommage_Blogext3"
+             parent="Ecommage_HelloWorld::hello_configuration" resource="Ecommage_Blogext3::listing" translate="title"
+             action="ecommage_blogext3/index/index"/>
+    </menu>
+</config>

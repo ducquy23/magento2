@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @var \Mageplaza\HelloWorld\Block\Index $block
+ */
+$image = 'logo/'. $block->getImageHelloWorld();
+$link_path_image = $block->getMediaUrl($image);
+echo $link_path_image;
+?>
+<h1><?php if($block->getTextHelloWorld() != '') echo $block->getTextHelloWorld(); ?></h1>
+<img src="<?php echo $link_path_image ?>" width="200px">
+<h1>======== TEST DATA MODEL ========</h1>

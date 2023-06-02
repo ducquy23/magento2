@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-re-captcha-webapi-ui/view/frontend/web/js/jquery-mixin.js

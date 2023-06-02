@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/app/code/Ecommage/Blogext3/view/frontend/web/js/main.js

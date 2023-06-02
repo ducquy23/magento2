@@ -1,0 +1,19 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Ecommage\HelloWorld\Block\CustomTab" name="custom.tab"  as="custom_tab" template="Ecommage_HelloWorld::custom_tab.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Custom Tab</argument>
+                    <argument name="sort_order" xsi:type="string">50</argument>
+                    <argument name="test" xsi:type="string">Quy</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="product.info.price">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Ecommage_HelloWorld::product/price.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
+

@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-search/view/frontend/web/js/form-mini.js

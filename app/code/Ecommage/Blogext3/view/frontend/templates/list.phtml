@@ -1,0 +1,100 @@
+<?php
+/**
+ * @var \Ecommage\Blogext3\Block\Display $block
+ * @var Magento\Framework\View\Element\Messages $messagesBlock
+ */
+$messagesBlock = $block->getLayout()->createBlock(\Magento\Framework\View\Element\Messages::class);
+$blogCollection = $block->getBlogCollection();
+function getLabelStatus($status)
+{
+    $status_name = '';
+    switch ($status) {
+        case '1':
+            $status_name = 'Publish';
+            break;
+        case '2':
+            $status_name = 'Draft';
+            break;
+        case '3':
+            $status_name = 'Non-Publish';
+            break;
+    }
+    return $status_name;
+}
+
+?>
+<?php if ($blogCollection->getSize() > 0) { ?>
+    <div class="messages">
+        <?= $messagesBlock->getGroupedHtml() ?>
+    </div>
+    <?php if ($block->checkLogined()) { ?>
+        <div style="margin-bottom: 20px;float: right">
+            <a href="<?php echo $block->getUrl('ecommage_blogext3/blog/create') ?>" class="btn btn-success"
+               style="color: #ffffff;padding: 5px;text-decoration: none">
+                <h4>Add new Blog</h4>
+            </a>
+        </div>
+        <table class="table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Url_Key</th>
+                <th scope="col">Content</th>
+                <th scope="col">Status</th>
+                <th scope="col">Author</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($blogCollection as $key => $blog): ?>
+                <tr>
+                    <th scope="row"><?= $key; ?></th>
+                    <td><?php echo $blog->getTitle(); ?></td>
+                    <td><?php echo $blog->getUrlKey(); ?></td>
+                    <td><?php echo $blog->getContent(); ?></td>
+                    <td><?php echo getLabelStatus($blog->getStatus()); ?></td>
+                    <td><?php echo $blog->getFirstname() . ' - ' . $blog->getLastname(); ?></td>
+                    <td><?php echo $blog->getEmail(); ?></td>
+                    <td class="text-center">
+                        <a href="<?php echo $block->getUrl('ecommage_blogext3/blog/edit', ['id' => $blog->getId()]); ?>"
+                           class="btn btn-info">UPDATE</a>
+                        <a href="<?php echo $block->getUrl('ecommage_blogext3/blog/delete', ['id' => $blog->getId()]); ?>"
+                           class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa bài blog này không ?')">DELETE</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php } else { ?>
+        <table class="table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Url_Key</th>
+                <th scope="col">Content</th>
+                <th scope="col">Status</th>
+                <th scope="col">Author</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($blogCollection as $key => $blog): ?>
+                <tr>
+                    <th scope="row"><?= $key; ?></th>
+                    <td><?php echo $blog->getTitle(); ?></td>
+                    <td><?php echo $blog->getUrlKey(); ?></td>
+                    <td><?php echo $blog->getContent(); ?></td>
+                    <td><?php echo getLabelStatus($blog->getStatus()); ?></td>
+                    <td><?php echo $blog->getFirstname(); ?></td>
+                    <td><?php echo $blog->getEmail(); ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php } ?>
+<?php } else { ?>
+    <h1 style="color:red">You have no blogs yet.</h1>
+<?php } ?>

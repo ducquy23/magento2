@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-catalog/view/frontend/web/js/product/storage/ids-storage.js

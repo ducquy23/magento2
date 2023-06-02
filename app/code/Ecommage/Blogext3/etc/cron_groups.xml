@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
+    <group id="blogext3">
+<!--   Xác định tần suất thực thi cho công việc cron trong nhóm này.Ở đây là 1p    -->
+        <schedule_generate_every>1</schedule_generate_every>
+<!--   Xác định khoảng thời gian trước kho công việc được thực đi     -->
+        <schedule_ahead_for>4</schedule_ahead_for>
+<!--   Xác định thời gian sống của một cron     -->
+        <schedule_lifetime>2</schedule_lifetime>
+<!--   Xác định tần suất xóa lịch sử công việc của cron     -->
+        <history_cleanup_every>10</history_cleanup_every>
+<!--   Xác định thời gian sống của lịch sử thành công trong công việc     -->
+        <history_success_lifetime>60</history_success_lifetime>
+<!--   Xác định thời gian sống của lịch sử thất bại trong công việc     -->
+        <history_failure_lifetime>4320</history_failure_lifetime>
+<!--   Xác định xem công việc cron trong nhóm này có sử dụng quá trình riêng biệt hay không.Ở đây,1 là quá trình riêng biệt     -->
+        <use_separate_process>1</use_separate_process>
+    </group>
+</config>

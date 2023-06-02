@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-captcha/view/frontend/web/js/view/checkout/defaultCaptcha.js

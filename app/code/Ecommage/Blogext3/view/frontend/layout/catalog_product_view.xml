@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Ecommage\Blogext3\Block\Blog\Slider" name="blogext3_slider" template="Ecommage_Blogext3::slider.phtml"></block>
+            <block class="Ecommage\Blogext3\Block\Blog\TestArgument" name="blogext3_test" template="Ecommage_Blogext3::test.phtml" before="blogext3_slider">
+                <arguments>
+                    <argument name="test_argument" xsi:type="string">Test_Argument</argument>
+                    <argument name="custom_argument" xsi:type="string">Custom_Argument</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

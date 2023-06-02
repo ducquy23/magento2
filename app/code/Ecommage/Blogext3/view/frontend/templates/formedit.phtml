@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @var \Ecommage\Blogext3\Block\Blog\FormEdit $block
+ * @var Magento\Framework\View\Element\Messages $messagesBlock
+ */
+$messagesBlock = $block->getLayout()->createBlock(\Magento\Framework\View\Element\Messages::class);
+$blog = $block->getBlogById();
+?>
+<div class="messages">
+    <?= $messagesBlock->getGroupedHtml() ?>
+</div>
+<a href="<?php echo $block->getUrl('ecommage_blogext3/blog/index') ?>" style="margin-bottom: 30px;"
+   class="btn btn-dark">
+    <h3>Back</h3>
+</a>
+<form name="edit-form" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="<?php echo $blog->getTitle(); ?>">
+    </div>
+    <div class="mb-3">
+        <label for="key" class="form-label">Url_key</label>
+        <input type="text" class="form-control" id="key" name="url_key" value="<?php echo $blog->getUrlKey(); ?>">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <input type="text" class="form-control" id="content" name="content" value="<?php echo $blog->getContent(); ?>">
+        <input type="hidden" name="id" id="id" value="<?php echo $blog->getId(); ?>">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Status</label>
+        <select name="status" id="select">
+            <option value="1" <?php echo $blog->getStatus() == 1 ? 'selected' : '' ?>>Publish</option>
+            <option value="2" <?php echo $blog->getStatus() == 2 ? 'selected' : '' ?>>Draft</option>
+            <option value="3" <?php echo $blog->getStatus() == 3 ? 'selected' : '' ?> >Non-Publish</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" id="submit-data">Update</button>
+</form>
+<script>
+    require(['jquery'], function ($) {
+        $(document).ready(function () {
+            $('#submit-data').on('click', function (e) {
+                e.preventDefault(); // Ngăn chặn hành vi mặc định của form
+                const title = $("#title").val();
+                const key = $("#key").val();
+                const content = $("#content").val();
+                const status = $("#select").val();
+                const id = $("#id").val();
+                const data = {
+                    id: id,
+                    title: title,
+                    url_key: key,
+                    content: content,
+                    status: status
+                }
+                const url = 'https://ducquy23.mgt/index.php/ecommage_blogext3/blog/save/';
+                console.log(data, url)
+                jQuery.ajax({
+                    url: url,
+                    type: "POST",
+                    data: data,
+                    showLoader: true
+                })
+                    .done(function (msg) {
+                        // console.log('OK' + msg)
+                    })
+            });
+        });
+    });
+
+</script>

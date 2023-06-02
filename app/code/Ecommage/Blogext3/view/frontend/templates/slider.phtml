@@ -1,0 +1,66 @@
+<?php
+/**
+ * @var \Ecommage\Blogext3\Block\Display $block
+ *
+ */
+$blogCollection = $block->getBlogCollection();
+function changeStatus($status)
+{
+    $status_name = '';
+    switch ($status) {
+        case 1:
+            $status_name = 'Publish';
+            break;
+        case 2:
+            $status_name = 'Draft';
+            break;
+        case 3:
+            $status_name = 'Non-Publish';
+            break;
+
+    }
+    return $status_name;
+}
+?>
+<style>
+    .slick-slider__item {
+        background: gainsboro;
+        color: #ffffff;
+        height: 240px;
+        width: 230px;
+        text-align: center;
+        font-size: 20px;
+        border: 1px solid black;
+        padding: 40px 10px;
+    }
+
+</style>
+<?php if ($block->checkLogin()) { ?>
+    <h1 class="text-center">Show all blog in customer </h1>
+    <div class="slick-slider">
+        <?php foreach ($blogCollection as $item) : ?>
+            <div class="item slick-slider__item"
+                 style="background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80') ">
+                <p>+ Title :<?php echo $item->getTitle(); ?></p>
+                <p>+ Content : <?php echo $item->getContent(); ?></p>
+                <p>+ Url_key : <?php echo $item->getUrlKey(); ?></p>
+                <p>+ Status : <?php echo changeStatus($item->getStatus()); ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php } else { ?>
+    <h1 class="text-center"><?php echo $block->getData('custom_param') ?> </h1>
+    <div class="slick-slider">
+        <?php foreach ($blogCollection as $item): ?>
+            <div class="item slick-slider__item"
+                 style="background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80') ">
+                <p>+ Title :<?php echo $item->getTitle(); ?></p>
+                <p>+ Content : <?php echo $item->getContent(); ?></p>
+                <p>+ Url_key : <?php echo $item->getUrlKey(); ?></p>
+                <p>+ Status : <?php echo changeStatus($item->getStatus()); ?></p>
+            </div>
+        <?php endforeach; ?>
+
+    </div>
+
+<?php } ?>

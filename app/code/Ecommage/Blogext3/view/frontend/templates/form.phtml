@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @var \Ecommage\Blogext3\Block\Blog\Form $block
+ * @var Magento\Framework\View\Element\Messages $messagesBlock
+ */
+$messagesBlock = $block->getLayout()->createBlock(\Magento\Framework\View\Element\Messages::class);
+?>
+<div class="messages">
+    <?= $messagesBlock->getGroupedHtml() ?>
+</div>
+<a href="<?php echo $block->getUrl('ecommage_blogext3/blog/index') ?>" style="margin-bottom: 30px;" class="btn btn-dark">
+    <h3>Back</h3>
+</a>
+<form action="<?php echo $block->getUrl('ecommage_blogext3/blog/save') ?>" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="mb-3">
+        <label for="key" class="form-label">Url_key</label>
+        <input type="text" class="form-control" id="key" name="url_key">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <input type="text" class="form-control" id="content" name="content">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Status</label>
+        <select name="status" id="select">
+            <option value="1">Publish</option>
+            <option value="2">Draft</option>
+            <option value="3">Non-Publish</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

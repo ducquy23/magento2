@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="blogext3">
+        <job name="my_custom_cronjob" instance="Ecommage\Blogext3\Cron\CustomCron" method="execute">
+            <schedule>* * * * *</schedule>
+        </job>
+    </group>
+    <group id="default">
+        <job name="update_status" instance="Ecommage\Blogext3\Cron\UpdateStatus" method="execute">
+            <schedule>*/10 * * * *</schedule>
+        </job>
+    </group>
+</config>
