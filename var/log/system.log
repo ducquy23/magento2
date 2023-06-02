@@ -986,3 +986,8 @@
 [2023-06-02T18:28:04.531921+00:00] main.INFO: cron example finished [] []
 [2023-06-02T18:29:02.974529+00:00] main.INFO: Starting running cron example [] []
 [2023-06-02T18:29:04.974987+00:00] main.INFO: cron example finished [] []
+[2023-06-02T18:30:07.075211+00:00] main.INFO: Starting running cron example [] []
+[2023-06-02T18:30:07.396462+00:00] main.INFO: Blog status updated successfully. [] []
+[2023-06-02T18:30:09.077220+00:00] main.INFO: cron example finished [] []
+[2023-06-02T18:31:04.505039+00:00] main.INFO: Starting running cron example [] []
+[2023-06-02T18:31:06.508703+00:00] main.INFO: cron example finished [] []
