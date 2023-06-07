@@ -56,7 +56,6 @@ class Save extends Action implements HttpPostActionInterface // định nghĩa m
                 $this->messageManager->addErrorMessage(__('Something went wrong while saving the post.'));
             }
         }
-
         return $resultRedirect->setPath('*/*/');
     }
 }

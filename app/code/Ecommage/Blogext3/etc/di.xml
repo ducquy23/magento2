@@ -1,8 +1,11 @@
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="ecommage_blogext3_blog_listing_data_source" xsi:type="string">Ecommage\Blogext3\Model\ResourceModel\Blog\Grid\Collection</item>
+                <item name="ecommage_blogext3_blog_listing_data_source" xsi:type="string">
+                    Ecommage\Blogext3\Model\ResourceModel\Blog\Grid\Collection
+                </item>
             </argument>
         </arguments>
     </type>
@@ -14,4 +17,21 @@
             <argument name="resourceModel" xsi:type="string">Ecommage\Blogext3\Model\ResourceModel\Blog</argument>
         </arguments>
     </type>
+    <type name="Ecommage\Blogext3\Controller\Index\Example">
+        <plugin name="Ecommage_Blogext3_Plugin" type="Ecommage\Blogext3\Plugin\ExamplePlugin" sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Ecommage\Blogext3\Controller\Index\GetBaseUrl">
+        <arguments>
+            <argument name="0" xsi:type="string">anystring</argument>
+            <argument name="1" xsi:type="string">xyz</argument>
+            <argument name="2" xsi:type="string">abs</argument>
+        </arguments>
+    </type>
+    <virtualType name="GetBaseurlExtended" type="Ecommage\Blogext3\Controller\Index\GetBaseUrl">
+        <arguments>
+            <argument name="name01" xsi:type="string">Nguyễn Đức Quý</argument>
+            <argument name="name02" xsi:type="string">Bùi Linh Giang</argument>
+        </arguments>
+    </virtualType>
 </config>

@@ -29,8 +29,7 @@ class UpdateStatus
         try {
             $collection = $this->collection->create();
             foreach ($collection as $item) {
-                $blog = $item->setStatus(1);
-                $collection->save($blog);
+                $item->setStatus(1)->save();
             }
             $this->logger->info('Blog status updated successfully.');
         } catch (\Exception $e) {

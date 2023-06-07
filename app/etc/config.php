@@ -348,6 +348,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Ecommage_Blogext3' => 1,
         'Ecommage_HelloWorld' => 1,
+        'Ecommage_Validation' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_Smtp' => 1,
         'PayPal_Braintree' => 1,

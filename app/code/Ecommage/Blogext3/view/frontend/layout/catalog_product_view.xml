@@ -8,6 +8,8 @@
                 <arguments>
                     <argument name="test_argument" xsi:type="string">Test_Argument</argument>
                     <argument name="custom_argument" xsi:type="string">Custom_Argument</argument>
+                    <argument name="view_model" xsi:type="object">Ecommage\Blogext3\viewModel\MyNewViewModel</argument>
+                    <argument name="test_helper" xsi:type="object">Ecommage\HelloWorld\Helper\Test</argument>
                 </arguments>
             </block>
         </referenceContainer>

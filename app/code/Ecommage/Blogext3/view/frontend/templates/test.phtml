@@ -2,13 +2,13 @@
 /**
  * @var Ecommage\Blogext3\Block\Blog\TestArgument $block;
  */
-$data = $block->testData();
-//$argument = $block->getArgument();
+var_dump($block->getDataHelper());
+
+$argument = $block->getArgument();
 $data1 = $block->getArgument();
 $data2 = $block->getArgument1();
 $data3 = $block->getArgument2();
 ?>
-<h1><?php echo $data; ?></h1>
-<h1><?php echo "Tham so duoc truyen vao la :" . $data1; ?></h1>
+<!--<h1>--><?php //echo "Tham so duoc truyen vao la :" . $data1; ?><!--</h1>-->
 <h1><?php echo "Tham so duoc truyen vao la : " . $data2; ?></h1>
 <h1><?php echo "Tham so duoc truyen vao la : " . $data3; ?></h1>

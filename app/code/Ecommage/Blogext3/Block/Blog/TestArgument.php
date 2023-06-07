@@ -15,12 +15,15 @@ class TestArgument extends Template {
         return 'test data overriding layout file';
     }
     public function getArgument(){
-        return $this->getData('test_argument');
+        return $this->getData('view_model');
     }
     public function getArgument1() {
         return $this->hasTestArgument() ? ' ' . $this->getTestArgument() : 'Không có giá trị này';
     }
     public function getArgument2() {
         return $this->getCustomArgument();
+    }
+    public function getDataHelper() {
+        return $this->getData('test_helper');
     }
 }
