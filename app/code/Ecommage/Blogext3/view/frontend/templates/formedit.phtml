@@ -12,7 +12,7 @@ $blog = $block->getBlogById();
     <h3>Back</h3>
 </a>
 <div class="alert alert-success d-none" id="notification"></div>
-<form name="edit-form" method="post">
+<form name="edit-form">
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" id="title" name="title" value="<?php echo $blog->getTitle(); ?>">
@@ -54,17 +54,13 @@ $blog = $block->getBlogById();
                     content: content,
                     status: status
                 }
-                const url = 'https://ducquy23.mgt/index.php/ecommage_blogext3/blog/save/';
+                const url = '/ecommage_blogext3/blog/save/';
                 jQuery.ajax({
                     url: url,
                     type: "POST",
                     data: data,
                     showLoader: true
                 })
-                    .done(function (msg) {
-                        $("#notification").html('<h2>You saved post blog successfully</h2>').removeClass('d-none');
-                        // console.log('OK' + msg)
-                    })
             });
         });
     });

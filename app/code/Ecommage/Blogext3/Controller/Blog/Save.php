@@ -43,13 +43,6 @@ class Save extends \Magento\Framework\App\Action\Action
         $currentIdCustomer = $this->_customerSession->getCustomerId();
         $resultRedirect = $this->resultRedirectFactory->create();
         $postData['author_id'] = $currentIdCustomer;
-        $checkDispatch = $this->_eventManager->dispatch('controller_action_predispatch_ecommage_blog_post_save',['ec_blogs' => $postData]);
-        $registry = \Magento\Framework\App\ObjectManager::getInstance()
-            ->get(\Magento\Framework\Registry::class);
-        $as = $registry->registry('test');
-        if(!$as) {
-            return $resultRedirect->setPath('ecommage_blogext3/blog/create');
-        }
         $blog = $this->_blogFactory->create();
         if (empty($postData['id'])) {
             $postData['id'] = null;
@@ -62,12 +55,12 @@ class Save extends \Magento\Framework\App\Action\Action
         } catch (\Throwable $e) {
             $this->_messageManager->addErrorMessage(__('Something went wrong while saving the post.'));
         }
+        //  Check redirect add,update
         if ($postData['id'] == null) {
             $this->_messageManager->addSuccessMessage(__('You saved post blog.'));
-            $resultRedirect->setPath('ecommage_blogext3/blog/index/');
+            return $resultRedirect->setPath('ecommage_blogext3/blog/index/');
         } else {
-            $resultRedirect->setPath('ecommage_blogext3/blog/edit/' . $blog->getId());
+            $this->_messageManager->addSuccessMessage(__('You updated post blog.'));
         }
-        return $resultRedirect;
     }
 }

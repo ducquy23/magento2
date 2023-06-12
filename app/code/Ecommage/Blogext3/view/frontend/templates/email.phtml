@@ -4,8 +4,9 @@
 * @var
 */
 $url =  $block->getUrl('ecommage_blogext3/index/save');
-
+$title = $block->getTitle();
 ?>
+<h1><?php echo $title; ?></h1>
 <form id="send-order-email" action="<?php echo $url; ?>" method="post">
     <div class="form-group">
         <label>Email Address</label>

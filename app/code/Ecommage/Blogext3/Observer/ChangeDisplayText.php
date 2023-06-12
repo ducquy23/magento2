@@ -7,7 +7,6 @@ use Magento\Framework\Event\ObserverInterface;
 
 class ChangeDisplayText implements ObserverInterface
 {
-
     public function execute(Observer $observer)
     {
         $displayText = $observer->getData('ec_text');

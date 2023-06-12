@@ -12,5 +12,6 @@
             <argument name="resourceModel" xsi:type="string">Ecommage\HelloWorld\Model\ResourceModel\Post</argument>
         </arguments>
     </virtualType>
+
 </config>
 

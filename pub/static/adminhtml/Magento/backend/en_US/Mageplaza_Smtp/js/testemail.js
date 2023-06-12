@@ -1,1 +1,0 @@
-/home/cloudpanel/htdocs/ducquy23.mgt/app/code/Mageplaza/Smtp/view/adminhtml/web/js/testemail.js

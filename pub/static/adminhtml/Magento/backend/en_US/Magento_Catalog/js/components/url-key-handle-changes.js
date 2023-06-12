@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-catalog/view/adminhtml/web/js/components/url-key-handle-changes.js

@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/lib/web/mage/adminhtml/wysiwyg/tiny_mce/tinymce5Adapter.js

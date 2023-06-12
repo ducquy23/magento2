@@ -1,5 +1,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Block\Product\View" type="Ecommage\Blogext3\Block\Catalog\Product\View" />
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
@@ -21,17 +22,10 @@
         <plugin name="Ecommage_Blogext3_Plugin" type="Ecommage\Blogext3\Plugin\ExamplePlugin" sortOrder="10"
                 disabled="false"/>
     </type>
-    <type name="Ecommage\Blogext3\Controller\Index\GetBaseUrl">
-        <arguments>
-            <argument name="0" xsi:type="string">anystring</argument>
-            <argument name="1" xsi:type="string">xyz</argument>
-            <argument name="2" xsi:type="string">abs</argument>
-        </arguments>
+    <type name="Ecommage\Blogext3\Controller\Blog\Save">
+        <plugin name="Ecommage_Blogext3_Plugin" type="Ecommage\Blogext3\Plugin\SavePlugin" sortOrder="1" disabled="false"/>
     </type>
-    <virtualType name="GetBaseurlExtended" type="Ecommage\Blogext3\Controller\Index\GetBaseUrl">
-        <arguments>
-            <argument name="name01" xsi:type="string">Nguyễn Đức Quý</argument>
-            <argument name="name02" xsi:type="string">Bùi Linh Giang</argument>
-        </arguments>
-    </virtualType>
+    <type name="Ecommage\Blogext3\Block\Email">
+        <plugin name="Ecommage-blogext3-email-block" type="Ecommage\Blogext3\Plugin\EmailPlugin" sortOrder="5" />
+    </type>
 </config>

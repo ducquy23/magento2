@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/lib/web/jquery/fileUploader/vendor/jquery.ui.widget.js

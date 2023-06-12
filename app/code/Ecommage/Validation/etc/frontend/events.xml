@@ -2,7 +2,4 @@
     <event name="customer_register_success">
         <observer name="ecommage_validation_create_blog" instance="Ecommage\Validation\Observer\CreateBlog" />
     </event>
-    <event name="controller_action_predispatch_ecommage_blog_post_save">
-        <observer name="ec_validation_blog" instance="Ecommage\Validation\Observer\CheckBadWordsObserver" />
-    </event>
 </config>

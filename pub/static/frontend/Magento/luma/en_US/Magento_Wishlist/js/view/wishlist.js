@@ -1,0 +1,1 @@
+/home/cloudpanel/htdocs/ducquy23.mgt/vendor/magento/module-wishlist/view/frontend/web/js/view/wishlist.js

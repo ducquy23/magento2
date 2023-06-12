@@ -13,4 +13,7 @@ class Email  extends Template {
         parent::__construct($context, $data);
         $this->context = $context;
     }
+    public function getTitle() {
+        return "Nguyen Duc Quy";
+    }
 }
